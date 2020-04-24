@@ -59,11 +59,12 @@ class _UsersListScreenState extends State<UsersListScreen> {
   Widget build(BuildContext context) {
 //    throw UnimplementedError();
     return Scaffold(
-      body: ListView.builder(
+      body: Card (
+        child: ListView.builder(
           itemCount: users.length,
           itemBuilder: (context, index) {
             return ListTile(
-
+              leading: Icon(Icons.person, size: 50.0, color: Colors.blueAccent,),
                 title: Text(users[index].name),
                 subtitle: Text(users[index].email),
                 onTap: () {
@@ -77,6 +78,7 @@ class _UsersListScreenState extends State<UsersListScreen> {
                 }
             );
           }
+        ),
       ),
     );
   }
@@ -93,6 +95,7 @@ class DetailScreen extends StatelessWidget {
 
     return Scaffold(
       body: new Center (
+        child: Card (
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -128,6 +131,7 @@ class DetailScreen extends StatelessWidget {
           ],
         ),
       ),
+    ),
     );
   }
 
